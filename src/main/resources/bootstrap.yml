@@ -1,0 +1,23 @@
+###集群地址
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9001/eureka
+    register-with-eureka: true
+    fetch-registry: true
+###网关名称
+spring:
+  application:
+    name: app-com.cloud-zuul
+  cloud:
+    config:
+      profile: dev
+      discovery:
+        service-id: config-server
+        enabled: true
+#####刷新配置  接口等
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
